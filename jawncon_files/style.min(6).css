@@ -1,0 +1,11 @@
+/*!
+ * DO NOT OVERRIDE THIS FILE.
+ * Generated with `npm run build`
+ *
+ * gfi - WordPress Theme for the GFI
+ * @version 0.0.1
+ * @author WDG
+ * @link https://www.webdevelopmentgroup.com/
+ */
+.panels{margin-top:1em;margin-bottom:1em}.panels__title{align-items:flex-start;cursor:pointer;display:flex;font-size:23px;font-weight:700;letter-spacing:.38px;line-height:1.5}.panels__title--edit{cursor:auto}.panels__title--edit .dashicon{flex:0 0 auto}.panels__title h1,.panels__title h2,.panels__title h3,.panels__title h4,.panels__title h5,.panels__title h6{font-size:1.625rem;margin:0}@media (max-width:767px){.panels__title h1,.panels__title h2,.panels__title h3,.panels__title h4,.panels__title h5,.panels__title h6{font-size:1.25rem}}.panels__content{margin-left:44px}.panels__content>*{margin-bottom:0}.panels__toggle{position:relative;flex:none;width:18px;height:18px;margin-right:22px;margin-top:6px;border-radius:50%;background-color:#fade00}.panels__toggle path{fill:#000}.panels__toggle::before,.panels__toggle::after{content:'';background-color:#000;display:block;height:2px;width:10px;transition:transform 300ms cubic-bezier(.68,-.55,.265,1.55);position:absolute;top:50%;left:4px;margin-top:-1px}.panels__toggle::after{transform:rotate(90deg)}.panels__panel{background-color:transparent;padding:20px;transition:background-color 300ms linear;border-bottom:2px solid #e3e3e3}.panels__panel--opened{background-color:#f4f5f5}.has-background .panels__panel--opened{background-color:#fff}.panels--interactive .panels__panel .panels__content{display:none}.panels--interactive .panels__panel--opened .panels__content{display:block}.panels--interactive .panels__panel--opened .panels__toggle::after{transform:rotate(0deg)}
+/*# sourceMappingURL=style.min.css.map */
