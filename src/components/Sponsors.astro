@@ -1,0 +1,74 @@
+---
+const sponsors = [
+  { name: "Ex-Lax", logo: "/assets/images/sponsor-logos/ex-lax.svg" },
+  { name: "Philadelphia Flyers", logo: "/assets/images/sponsor-logos/philadelphia-flyers.png" },
+  { name: "Enron", logo: "/assets/images/sponsor-logos/enron.svg" },
+  { name: "MyPillow", logo: "/assets/images/sponsor-logos/mypillow.png" },
+  { name: "Carnival Cruise Line", logo: "/assets/images/sponsor-logos/carnival-cruise.jpg" },
+  { name: "Big Lots", logo: "/assets/images/sponsor-logos/big-lots.png" },
+  { name: "Amway", logo: "/assets/images/sponsor-logos/amway.png" },
+  { name: "Four Seasons", logo: "/assets/images/sponsor-logos/four-seasons.png" },
+  { name: "Meta", logo: "/assets/images/sponsor-logos/meta.png" },
+  { name: "SKYN", logo: "/assets/images/sponsor-logos/skyn.webp" },
+  { name: "the Church of Scientology", logo: "/assets/images/sponsor-logos/scientology.jpg" },
+  { name: "Neopets", logo: "/assets/images/sponsor-logos/neopets.png" },
+  { name: "Emblem of Eritrea", logo: "/assets/images/sponsor-logos/eritrea.png" },
+  { name: "Verexxotle", logo: "/assets/images/sponsor-logos/verexxotle.webp" },
+  { name: "Spencer's", logo: "/assets/images/sponsor-logos/spencers.png" },
+  { name: "Shein", logo: "/assets/images/sponsor-logos/shein.png" },
+  { name: "Four Seasons Landscaping", logo: "/assets/images/sponsor-logos/four-seasons.png" },
+  { name: "AWS", logo: "/assets/images/sponsor-logos/aws.png" },
+];
+---
+
+<section class="py-20 section-gradient">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="jawn-section text-foreground mb-4">2023 Sponsors</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        JawnCon is made possible by the generous support of these distinguished organizations
+      </p>
+    </div>
+
+    <!-- Sponsors Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
+      {sponsors.map((sponsor) => (
+        <div class="professional-card p-6 flex items-center justify-center hover:shadow-lg transition-shadow">
+          <img 
+            src={sponsor.logo} 
+            alt={sponsor.name}
+            class="max-w-[150px] max-h-[100px] w-auto h-auto object-contain"
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- Become a Sponsor CTA -->
+    <div class="professional-card p-8 text-center">
+      <h3 class="text-2xl font-semibold text-foreground mb-4">
+        Become a JawnCon Sponsor
+      </h3>
+      <p class="text-muted-foreground mb-6 max-w-2xl mx-auto">
+        Join leading organizations in supporting the premier jawn conference. 
+        Multiple sponsorship tiers available with exclusive benefits and branding opportunities.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/sponsor-package.pdf" class="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+          Download Sponsorship Package
+        </a>
+        <a href="mailto:partners@jawncon.fake" class="border border-border px-6 py-3 rounded-lg font-semibold text-foreground hover:bg-muted transition-colors">
+          Contact Partnership Team
+        </a>
+      </div>
+    </div>
+
+    <!-- Subtle footer note -->
+    <div class="text-center mt-8">
+      <p class="text-xs text-muted-foreground">
+        All sponsor logos displayed with express written consent. 
+        Trademark usage guidelines strictly enforced. 
+        <span class="font-mono">© 2023-2024ish JawnCon Organization Committee</span>
+      </p>
+    </div>
+  </div>
+</section> 

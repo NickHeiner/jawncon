@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .jawn-hero {
+    @apply text-5xl md:text-7xl font-bold;
+  }
+
+  .jawn-section {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  .jawn-card {
+    @apply text-lg font-semibold;
+  }
+
+  .professional-card {
+    @apply bg-white rounded-lg shadow-md border border-gray-100;
+  }
+
+  .hero-card {
+    @apply transition-all duration-300 transform hover:scale-105;
+  }
+
+  .section-gradient {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100;
+  }
+
+  .uncanny-accent {
+    @apply absolute inset-0 bg-uncanny opacity-10 -z-10;
+  }
+}

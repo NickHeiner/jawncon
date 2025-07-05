@@ -1,0 +1,122 @@
+---
+const speakers = [
+  {
+    name: "Trevor Ertel, Esq.",
+    company: "Global Jawn Industries",
+    talk: "The Future of Jawn: A Comprehensive Analysis of Market Trends and Emerging Opportunities",
+    image: "/assets/images/trevor-hooray.jpeg",
+    isKeynote: true,
+  },
+  {
+    name: "Jason Kelce",
+    company: "Broad Street Jawn Exchange",
+    talk: "Underground Networks: Optimizing Jawn Distribution Through Non-Traditional Channels",
+    image: "/assets/images/gritty.jpeg",
+  },
+  {
+    name: "The Philly Phanatic",
+    company: "Citizens Bank Jawn Park LLC",
+    talk: "Beyond Words: Non-Verbal Communication Strategies in Jawn Negotiations",
+    image: "/assets/images/draw-me-like-one-of-your-french-jawns-kynn-peterkin.jpeg",
+  },
+  {
+    name: "Jim Gardner",
+    company: "Action Jawn News",
+    talk: "Breaking Jawn: Real-Time Reporting in the Digital Age",
+    image: "/assets/images/gritty.jpeg",
+  },
+  {
+    name: "Wawa Hoagie",
+    company: "Wawa Jawn Distribution Network",
+    talk: "24/7 Jawn Accessibility: Lessons from Convenience Infrastructure",
+    image: "/assets/images/gritty.jpeg",
+  },
+  {
+    name: "Questlove",
+    company: "The Roots of Jawn Institute",
+    talk: "Rhythm and Revenue: Synchronizing Jawn Cycles with Market Beats",
+    image: "/assets/images/draw-me-like-one-of-your-french-jawns-kynn-peterkin.jpeg",
+  },
+  {
+    name: "Joel Embiid",
+    company: "Jawn Processing Corporation",
+    talk: "Trust the Process: Long-Term Jawn Investment Strategies",
+    image: "/assets/images/gritty.jpeg",
+  },
+  {
+    name: "Nick Foles",
+    company: "Philly Special Jawn Enterprises",
+    talk: "Underdog Advantage: Disrupting Traditional Jawn Markets",
+    image: "/assets/images/draw-me-like-one-of-your-french-jawns-kynn-peterkin.jpeg",
+  },
+];
+---
+
+<section class="py-20 bg-background">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="jawn-section text-foreground mb-4">
+        Keynote Speakers & Industry Leaders
+      </h2>
+      <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+        Learn from the brightest minds in jawn innovation, featuring exclusive insights from top-tier executives and researchers
+      </p>
+    </div>
+
+    <!-- Keynote Speaker (Trevor) -->
+    {speakers.filter(s => s.isKeynote).map((speaker) => (
+      <div class="mb-16">
+        <div class="professional-card p-8 bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/30">
+          <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-shrink-0">
+              <img 
+                src={speaker.image} 
+                alt={speaker.name}
+                class="w-32 h-32 rounded-full object-cover ring-4 ring-primary/50"
+              />
+            </div>
+            <div class="text-center md:text-left flex-grow">
+              <div class="inline-block bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">
+                KEYNOTE SPEAKER
+              </div>
+              <h3 class="text-2xl font-bold text-foreground mb-2">{speaker.name}</h3>
+              <p class="text-lg text-muted-foreground mb-3">{speaker.company}</p>
+              <p class="text-lg font-semibold text-secondary">{speaker.talk}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+
+    <!-- Other Speakers -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      {speakers.filter(s => !s.isKeynote).map((speaker) => (
+        <div class="professional-card p-6 text-center hover:shadow-lg transition-shadow duration-300">
+          <div class="mb-4">
+            <img 
+              src={speaker.image} 
+              alt={speaker.name}
+              class="w-24 h-24 rounded-full mx-auto object-cover"
+            />
+          </div>
+          <h3 class="font-semibold text-foreground mb-2">{speaker.name}</h3>
+          <p class="text-sm text-muted-foreground mb-3">{speaker.company}</p>
+          <p class="text-sm font-medium text-secondary italic">"{speaker.talk}"</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Additional Speakers Section -->
+    <div class="professional-card p-8 text-center">
+      <h3 class="text-xl font-semibold text-foreground mb-4">
+        +200 Additional Speakers
+      </h3>
+      <p class="text-muted-foreground mb-6">
+        Including representatives from Fortune 500 companies, academic institutions, and government agencies
+      </p>
+      <button class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-2 rounded transition-colors">
+        View Full Speaker Lineup
+      </button>
+    </div>
+  </div>
+</section> 

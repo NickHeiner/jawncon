@@ -1,0 +1,66 @@
+---
+const testimonials = [
+  { quote: "JawnCon completely transformed how we approach jawn management in our organization. The networking opportunities alone were worth the investment.", author: "Jennifer Adams", title: "Director of Operations", company: "Enterprise Solutions Inc." },
+  { quote: "The quality of speakers and the depth of jawn-related content exceeded all expectations. This is truly the premier conference in the industry.", author: "Michael Chen", title: "Senior Manager", company: "Innovation Corp" },
+  { quote: "I've attended many conferences, but JawnCon stands out for its professional organization and the caliber of attendees. Highly recommended.", author: "Lisa Johnson", title: "Vice President", company: "Global Enterprises" },
+  { quote: "The strategic insights gained from JawnCon have been instrumental in our company's growth. Looking forward to next year's event.", author: "Robert Smith", title: "Chief Executive Officer", company: "Business Dynamics LLC" },
+];
+---
+
+<section class="py-20 section-gradient">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="jawn-section text-foreground mb-4">What Our Attendees Say</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Join thousands of satisfied professionals who have accelerated their careers through JawnCon
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      {testimonials.map((t, index) => (
+        <div class="professional-card p-8">
+          <div class="text-lg text-muted-foreground mb-6 leading-relaxed italic">"{t.quote}"</div>
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4">
+              <span class="text-accent-foreground font-semibold">{t.author.split(' ').map((n) => n[0]).join('')}</span>
+            </div>
+            <div>
+              <div class="font-semibold text-foreground">{t.author}</div>
+              <div class="text-sm text-muted-foreground">{t.title}</div>
+              <div class="text-sm text-muted-foreground">{t.company}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="professional-card p-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-2xl font-semibold text-foreground mb-4">Networking That Matters</h3>
+          <p class="text-muted-foreground mb-6 leading-relaxed">
+            Connect with industry leaders, share insights, and build lasting professional relationships.
+            Our structured networking sessions ensure meaningful conversations and valuable connections.
+          </p>
+          <div class="flex items-center space-x-8">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-secondary mb-1">89%</div>
+              <div class="text-sm text-muted-foreground">Made New Contacts</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-secondary mb-1">76%</div>
+              <div class="text-sm text-muted-foreground">Closed Deals</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-secondary mb-1">94%</div>
+              <div class="text-sm text-muted-foreground">Plan to Return</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="/assets/images/DALL·E 2022-10-06 18.48.23 - photo of a huge group of nerds, trading coins, rusty nails, and dice, mostly wearing philadelphia eagles colors, in a convention center..png" alt="Professional networking at JawnCon" class="rounded-lg w-full h-64 object-cover" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

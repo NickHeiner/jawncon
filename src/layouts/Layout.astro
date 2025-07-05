@@ -14,7 +14,7 @@ const { title } = Astro.props;
   <meta name="description" content="JawnCon - The world's most in-depth, cross-sector gathering celebrating the international jawn community">
   <title>{title} | JawnCon</title>
 </head>
-<body>
+<body class="min-h-screen bg-background font-sans bg-jawn-pattern">
   <header class="site-header">
     <div class="container">
       <nav class="main-nav">
@@ -35,15 +35,14 @@ const { title } = Astro.props;
     <slot />
   </main>
   
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; {new Date().getFullYear()} JawnCon. All rights reserved.</p>
-      <p>Powered by jawns 🎲</p>
-    </div>
-  </footer>
 </body>
 </html>
 
 <style is:global>
+  @import '../styles/tailwind.css';
   @import '../styles/global.css';
-</style> 
+</style>
+
+<script>
+  // no-op script but ensures body class
+</script> 
