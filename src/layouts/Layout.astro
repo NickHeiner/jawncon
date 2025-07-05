@@ -34,7 +34,141 @@ const { title } = Astro.props;
   <main>
     <slot />
   </main>
-  
+
+<!-- Background Audio Controller (persistent across page navigations) -->
+<script type="module">
+  /*  JawnCon Easter-egg soundtrack ✨
+      Behaviour:
+        • Wait a random 30 – 120 s on first visit (or resume saved timer)
+        • Play all tracks in /assets/tunes sequentially (loops)
+        • After finishing playlist, remain silent for 3 – 10 min, then repeat
+        • Persist state (current track, timestamp, upcoming action) in localStorage so it survives full page reloads / navigation.
+  */
+
+  const TRACKS = [
+    "who let the jawns out (ska).mp3",
+    "who let the jawns out (ska) (1).mp3",
+    "who let the jawns out (conor's version).mp3",
+    "who let the jawns out (conor's version) (1).mp3",
+    "who let the jawns out (elliott's version).mp3",
+    "who let the jawns out (elliott's version) (1).mp3",
+    "who let the jawns out.mp3",
+    "who let the jawns out (1).mp3",
+  ].map(f => `/assets/tunes/${encodeURIComponent(f)}`);
+
+  const STORAGE_KEY = "jawn-music-state-v1";
+
+  /**
+   * @typedef {Object} MusicState
+   * @property {number} trackIndex
+   * @property {number} trackTime   - seconds into current track
+   * @property {"waiting"|"playing"|"silence"} mode
+   * @property {number} nextActionTs - epoch ms when next action (play/ resume / exit silence) occurs
+   */
+
+  /** @type {MusicState} */
+  let state = loadState();
+
+  // Audio element kept in memory
+  const audio = new Audio();
+  audio.preload = "auto";
+  audio.addEventListener("ended", handleTrackEnd);
+
+  // (Intentionally no visibility handling; soundtrack continues even in background tabs)
+
+  // Attempt to resume immediately if we were mid-track
+  if (state.mode === "playing") {
+    playCurrentTrack();
+  }
+
+  // Main loop timer – check once per second
+  const timer = setInterval(tick, 1000);
+
+  function tick() {
+    const now = Date.now();
+
+    switch (state.mode) {
+      case "waiting":
+      case "silence":
+        if (now >= state.nextActionTs) {
+          startPlaybackCycle();
+        }
+        break;
+      case "playing":
+        // nothing; audio events handle progression
+        break;
+    }
+  }
+
+  function startPlaybackCycle() {
+    state.mode = "playing";
+    state.trackIndex = state.trackIndex % TRACKS.length; // safeguard
+    state.trackTime = 0;
+    playCurrentTrack();
+  }
+
+  function playCurrentTrack() {
+    const src = TRACKS[state.trackIndex];
+    if (!src) return;
+    audio.src = src;
+    audio.currentTime = state.trackTime || 0;
+    audio.play().catch(() => { /* user may have blocked autoplay */ });
+    persist();
+  }
+
+  function handleTrackEnd() {
+    state.trackIndex += 1;
+    state.trackTime = 0;
+
+    if (state.trackIndex < TRACKS.length) {
+      // Play next track immediately
+      playCurrentTrack();
+    } else {
+      // Finished playlist – schedule silence
+      const silenceMinutes = randInt(3, 10);
+      state = {
+        mode: "silence",
+        trackIndex: 0,
+        trackTime: 0,
+        nextActionTs: Date.now() + silenceMinutes * 60 * 1000,
+      };
+      audio.src = ""; // release
+      persist();
+    }
+  }
+
+  function saveProgress() {
+    if (state.mode === "playing") {
+      state.trackTime = audio.currentTime;
+    }
+    persist();
+  }
+
+  window.addEventListener("beforeunload", saveProgress);
+
+  function persist() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function loadState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch {}
+    // Default: waiting between 30s-120s
+    return {
+      trackIndex: 0,
+      trackTime: 0,
+      mode: "waiting",
+      nextActionTs: Date.now() + randInt(30, 120) * 1000,
+    };
+  }
+
+  function randInt(minSeconds, maxSeconds) {
+    return Math.floor(Math.random() * (maxSeconds - minSeconds + 1)) + minSeconds;
+  }
+</script>
+
 </body>
 </html>
 
