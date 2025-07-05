@@ -8,10 +8,15 @@ export default {
       },
       colors: {
         primary: "#667eea",
+        "primary-foreground": "#ffffff",
         secondary: "#764ba2",
+        "secondary-foreground": "#ffffff",
         accent: "#f59e0b",
+        "accent-foreground": "#000000",
         warning: "#f97316",
+        "warning-foreground": "#ffffff",
         uncanny: "#84cc16",
+        "uncanny-foreground": "#000000",
         background: "#ffffff",
         foreground: "#1f2937",
         muted: {
