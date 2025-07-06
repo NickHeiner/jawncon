@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Attractions - JawnCon">
+  <!-- Hero Section -->
+  <section class="hero-section" style="position: relative; overflow: hidden; padding: 4rem 0; min-height: 400px; display: flex; align-items: center;">
+    <img src="/assets/images/hero.png" alt="JawnCon Attractions" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 0;"></div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <h1 style="text-align: center; color: #ffffff; margin-bottom: 1rem; font-size: 3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">JawnCon Attractions</h1>
+      <p style="text-align: center; font-size: 1.3rem; font-style: italic; margin-bottom: 3rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
+        Three Days, Five Tracks
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Attractions -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem; color: #007C89;">Main Attractions</h2>
+      
+      <div style="display: grid; gap: 4rem;">
+        <!-- JawnPawn -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <div>
+            <h3 style="color: #007C89; font-size: 2rem; margin-bottom: 1rem;">The Collection, by Louis Vitton</h3>
+            <p style="font-style: italic;">
+              "Timeless elegance meets unmatched beauty"
+            </p>
+          </div>
+          <div>
+            <img src="/assets/images/jawn-model.png" alt="JawnPawn Model" style="width: 100%; border-radius: 8px;">
+          </div>
+        </div>
+
+        <!-- Antique Jawn Show -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <div style="order: 2;">
+            <h3 style="color: #007C89; font-size: 2rem; margin-bottom: 1rem;">Antique Jawn Roadshow</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">
+              Put your jawn valuation debates to rest with the crew from Antique Jawn Roadshow. The definitive jawn valuation event.
+            </p>
+          </div>
+          <div style="order: 1;">
+            <img src="/assets/images/antique-jawn-show.png" alt="Antique Jawn Show" style="width: 100%; border-radius: 8px;">
+          </div>
+        </div>
+
+        <!-- Dining Hall -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <div>
+            <h3 style="color: #007C89; font-size: 2rem; margin-bottom: 1rem;">Dining Hall</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">
+              Experience culinary innovation at its finest with our Garbage Plates × Jawn collaboration. 
+              Plus, don't miss Papa Jawns – "Better ingredients, better pizza, better jawns. Papa Jawns."
+            </p>
+          </div>
+          <div>
+            <img src="/assets/images/cuisine.png" alt="Jawn Cuisine" style="width: 100%; border-radius: 8px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+              <img src="/assets/images/papa-jawns.png" alt="Papa Jawns Logo" style="width: 100%; border-radius: 8px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Cable Swap -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <div style="order: 2;">
+            <h3 style="color: #007C89; font-size: 2rem; margin-bottom: 1rem;">Cable Swap</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">
+              Lost your charger for that 2004 Nokia? Need a proprietary cable for a device that was discontinued 
+              before you were born? Dive into our legendary Cable Swap pit, where tangled dreams become reality. 
+            </p>
+            <p style="font-style: italic;">
+              "JAWN CON IS NOT LIABLE FOR ANY FINGER INJURIES RESULTING FROM THE CABLE SWAP BUCKET. THIS HAS HELD UP IN COURT."
+            </p>
+          </div>
+          <div style="order: 1;">
+            <img src="/assets/images/cable-swap.png" alt="Cable Swap" style="width: 100%; border-radius: 8px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Vendors -->
+  <section class="section" style="background-color: #f8f9fa;">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Featured Vendors</h2>
+      
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <img src="/assets/images/plumpmaster.png" alt="Featured Vendor" style="max-width: 600px; width: 100%; border-radius: 8px;">
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h3>Dice & Gaming</h3>
+          <p>Custom dice sets, gaming accessories, and rare collectibles from local artisans who've definitely never weighted a die.</p>
+        </div>
+        
+        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h3>Vintage Coins & Currency</h3>
+          <p>Historical coins, paper money, and numismatic jawns. We accept payment in... different coins.</p>
+        </div>
+        
+        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h3>Industrial Salvage</h3>
+          <p>Rusty nails, vintage hardware, and tetanus opportunities for your creative projects.</p>
+        </div>
+        
+        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h3>Office Supplies Exchange</h3>
+          <p>Paperclips, rubber bands, and other items you steal from work but in bulk quantities.</p>
+        </div>
+        
+        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h3>Mystery Jawn Booth</h3>
+          <p>We don't know what they're selling and neither do they. That's the fun part!</p>
+        </div>
+        
+        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h3>Emotional Support Jawns</h3>
+          <p>When you need a jawn that understands you. No certification required or provided.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout> 
