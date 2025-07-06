@@ -82,7 +82,7 @@ const { title } = Astro.props;
   }
 
   // Main loop timer – check once per second
-  const timer = setInterval(tick, 1000);
+  setInterval(tick, 1000);
 
   function tick() {
     const now = Date.now();
@@ -160,7 +160,7 @@ const { title } = Astro.props;
       trackIndex: 0,
       trackTime: 0,
       mode: "waiting",
-      nextActionTs: Date.now() + randInt(30, 120) * 1000,
+      nextActionTs: Date.now() + randInt(15, 45) * 1000,
     };
   }
 

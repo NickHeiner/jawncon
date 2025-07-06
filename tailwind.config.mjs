@@ -17,6 +17,8 @@ export default {
         "warning-foreground": "#ffffff",
         uncanny: "#84cc16",
         "uncanny-foreground": "#000000",
+        teal: "#007C89",
+        "teal-foreground": "#ffffff",
         background: "#ffffff",
         foreground: "#1f2937",
         muted: {

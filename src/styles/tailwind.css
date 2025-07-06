@@ -31,3 +31,13 @@
     @apply absolute inset-0 bg-uncanny opacity-10 -z-10;
   }
 }
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .text-shadow-sm {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+}
