@@ -1,9 +1,29 @@
 ---
-const testimonials = [
-  { quote: "JawnCon completely transformed how we approach jawn management in our organization. The networking opportunities alone were worth the investment.", author: "Jennifer Adams", title: "Director of Operations", company: "Enterprise Solutions Inc." },
-  { quote: "The quality of speakers and the depth of jawn-related content exceeded all expectations. This is truly the premier conference in the industry.", author: "Michael Chen", title: "Senior Manager", company: "Innovation Corp" },
-  { quote: "I've attended many conferences, but JawnCon stands out for its professional organization and the caliber of attendees. Highly recommended.", author: "Lisa Johnson", title: "Vice President", company: "Global Enterprises" },
-  { quote: "The strategic insights gained from JawnCon have been instrumental in our company's growth. Looking forward to next year's event.", author: "Robert Smith", title: "Chief Executive Officer", company: "Business Dynamics LLC" },
+const endorsements = [
+  {
+    quote: "Whether it's for painting miniatures, stocking up for board game nights, or setting up a romantic dinner with the missus, I get all my jawns at JawnCawn. It's my favorite event of the year, and really defines the culture of Philadelphia.",
+    author: "Trevor Ertel",
+    title: "Jawntrepreneur",
+    image: "/assets/images/speakers/trevor-hooray.jpeg",
+    featured: true
+  },
+  {
+    quote: "I loved the LesMis performance by Jawn ValJawn last year. I dreamed a Jawn!",
+    author: "JawnCawn 2022 attendee"
+  },
+  {
+    quote: "JawnCawn cured my suicidal ideation. I don't know where I'd be without jawns.",
+    author: "JawnCawn 2021 attendee"
+  },
+  {
+    quote: "Inspiring.",
+    author: "GFC 2021 attendee"
+  },
+  {
+    quote: "I've got at least 13 jawns in my ass at this very moment, and I can't wait to add more.",
+    author: "Mark Zuckerberg",
+    title: "Founder, Meta"
+  }
 ];
 ---
 
@@ -17,17 +37,20 @@ const testimonials = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-      {testimonials.map((t, index) => (
+      {endorsements.map((t, index) => (
         <div class="professional-card p-8">
           <div class="text-lg text-muted-foreground mb-6 leading-relaxed italic">"{t.quote}"</div>
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4">
-              <span class="text-accent-foreground font-semibold">{t.author.split(' ').map((n) => n[0]).join('')}</span>
-            </div>
+            {t.image ? (
+              <img src={t.image} alt={t.author} class="w-12 h-12 rounded-full object-cover mr-4" />
+            ) : (
+              <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4">
+                <span class="text-accent-foreground font-semibold">{t.author.split(' ').map((n) => n[0]).join('')}</span>
+              </div>
+            )}
             <div>
               <div class="font-semibold text-foreground">{t.author}</div>
               <div class="text-sm text-muted-foreground">{t.title}</div>
-              <div class="text-sm text-muted-foreground">{t.company}</div>
             </div>
           </div>
         </div>
